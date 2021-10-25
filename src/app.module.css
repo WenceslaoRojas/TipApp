@@ -1,0 +1,27 @@
+:root {
+  --strongCyan-color: #26c0ab;
+  --veryDark-color: hsl(183, 100%, 15%);
+  --darkGrayish1-color: hsl(186, 14%, 43%);
+  --darkGrayish2-color: hsl(184, 14%, 56%);
+  --lightGrayish1-color: hsl(185, 41%, 84%);
+  --lightGrayish2-color: hsl(189, 41%, 97%);
+}
+
+.appContainer {
+  background-color: var(--lightGrayish1-color);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.divsContainer {
+  background-color: #ffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 65vw;
+  height: 65vh;
+  border-radius: 30px;
+}

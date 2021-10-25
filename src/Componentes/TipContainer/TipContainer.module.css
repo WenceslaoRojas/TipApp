@@ -1,0 +1,218 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+.tipContainer {
+  background-color: #ffff;
+  width: 95%;
+  height: 90%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.inputsContainer {
+  display: flex;
+  width: 48%;
+  height: 100%;
+  border-radius: 15px;
+  flex-direction: column;
+}
+.billContainer {
+  margin-top: 1%;
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.billContainer span,
+.btnsContainer span,
+.peopleContainer span {
+  font-family: monospace, monospace;
+  font-weight: 500;
+  font-size: 18px;
+  width: 100%;
+  margin-bottom: 2%;
+}
+.billContainer input {
+  /* margin-top: -2%; */
+  background-color: var(--lightGrayish2-color);
+  font-family: monospace, monospace;
+  font-weight: 700;
+  width: 100%;
+  height: 5%;
+  border: none;
+  text-align: right;
+  font-size: 24px;
+  padding: 5%;
+  background-image: url("./icon-dollar.svg");
+  background-repeat: no-repeat;
+  background-size: 3.5%;
+  background-position-y: center;
+  background-position-x: 4%;
+  -moz-appearance: textfield;
+}
+
+.billContainer input::placeholder {
+  font-size: 24px;
+  font-family: monospace, monospace;
+  text-align: right;
+  align-items: center;
+}
+.billContainer input::-webkit-inner-spin-button,
+.billContainer input::-webkit-outer-spin-button,
+.customTip::-webkit-inner-spin-button,
+.customTip::-webkit-outer-spin-button,
+.peopleBtn::-webkit-inner-spin-button,
+.peopleBtn::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.btnsContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 1%;
+}
+.divBtn1 {
+  margin-bottom: 1%;
+}
+.divBtn1,
+.divBtn2 {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 1%;
+  width: 100%;
+  height: fit-content;
+}
+/* .btnsContainer span {
+  margin-bottom: 1%;
+} */
+.btnTip {
+  width: 30%;
+  height: 50px;
+  background-color: var(--veryDark-color);
+  border-radius: 5px;
+  /* margin-bottom: 4%; */
+  font-family: monospace, monospace;
+  font-size: 24px;
+  font-weight: 900;
+  color: var(--lightGrayish2-color);
+  border: none;
+}
+.btnTip:hover {
+  cursor: pointer;
+  border: 1px solid var(--lightGrayish2-color);
+}
+
+.btnTip:active {
+  border: 1px solid red;
+}
+.customTip {
+  width: 30%;
+  height: 50px;
+  background-color: var(--lightGrayish2-color);
+  border-radius: 5px;
+  font-family: monospace, monospace;
+  font-size: 24px;
+  font-weight: 900;
+  color: var(--veryDark-color);
+  border: none;
+  text-align: center;
+}
+.customTip {
+  cursor: pointer;
+}
+
+.customTip::placeholder {
+  color: var(--veryDark-color);
+  text-align: center;
+}
+
+.customtip:focus {
+  outline: none;
+}
+
+.divBtn2 input:focus {
+  outline: none;
+}
+
+.peopleContainer {
+  margin-top: 6%;
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.peopleBtn {
+  /* margin-top: 2%; */
+  background-color: var(--lightGrayish2-color);
+  font-family: monospace, monospace;
+  font-weight: 700;
+  width: 100%;
+  height: 5%;
+  border: none;
+  text-align: right;
+  font-size: 24px;
+  padding: 5%;
+  background-image: url("./icon-person.svg");
+  background-repeat: no-repeat;
+  background-size: 3.5%;
+  background-position-y: center;
+  background-position-x: 4%;
+  -moz-appearance: textfield;
+}
+/* ---------------------------------------------- RESULTS STYLES --------------------------- */
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+
+.resultsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: var(--veryDark-color);
+  width: 48%;
+  height: 100%;
+  border-radius: 15px;
+}
+
+.resultsContainer div {
+  display: flex;
+  width: 100%;
+  padding: 7%;
+  justify-content: space-between;
+  align-items: center;
+}
+.spanTotal {
+  font-family: monospace, monospace;
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--lightGrayish2-color);
+}
+
+.spanMoney {
+  min-inline-size: fit-content;
+  font-family: monospace, monospace;
+  color: var(--strongCyan-color);
+  font-size: 60px;
+  font-weight: 900;
+}
+
+.btn {
+  font-family: monospace, monospace;
+  font-size: 18px;
+  letter-spacing: 5px;
+  width: 80%;
+  height: 50px;
+  margin: 0 auto;
+  background-color: var(--strongCyan-color);
+  border: none;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  color: var(--lightGrayish2-color);
+  cursor: pointer;
+  border: 1px solid var(--lightGrayish2-color);
+}
+.prueba {
+  border: 5px solid blue;
+}
