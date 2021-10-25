@@ -133,6 +133,12 @@ function TipContainer() {
     totalTipCalculate(person1, tip1, bill1);
   }, [tip, bill, person]);
 
+  const maxLengthCheck = (e) => {
+    if (e.target.value.length > e.target.maxLength) {
+      e.target.value = e.target.value.slice(0, e.target.maxLength);
+    }
+  };
+
   return (
     <div className={tipStayle.tipContainer}>
       {/* SECCION DE INPUTS */}
@@ -140,11 +146,13 @@ function TipContainer() {
         <div className={tipStayle.billContainer}>
           <span> Bill </span>
           <input
+            maxLength="7"
             value={bill}
             type="number"
             placeholder="0"
             min="0"
             onChange={(e) => {
+              maxLengthCheck(e);
               setBill(e.target.value);
               totalTipCalculate();
             }}
@@ -255,11 +263,11 @@ function TipContainer() {
       <div className={tipStayle.resultsContainer}>
         <div>
           <span className={tipStayle.spanTotal}>Total Tip</span>
-          <span className={tipStayle.spanMoney}> $ {totalTip} </span>
+          <span className={tipStayle.spanMoney}> ${totalTip} </span>
         </div>
         <div>
           <span className={tipStayle.spanTotal}>/Person</span>
-          <span className={tipStayle.spanMoney}> $ {tipPerson} </span>
+          <span className={tipStayle.spanMoney}> ${tipPerson} </span>
         </div>
         <button className={tipStayle.btn} onClick={(e) => reset(e)}>
           RESET

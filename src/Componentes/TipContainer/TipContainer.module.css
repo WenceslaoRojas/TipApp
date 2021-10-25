@@ -48,7 +48,6 @@
   background-size: 3.5%;
   background-position-y: center;
   background-position-x: 4%;
-  -moz-appearance: textfield;
 }
 
 .billContainer input::placeholder {
@@ -105,9 +104,6 @@
   border: 1px solid var(--lightGrayish2-color);
 }
 
-.btnTip:active {
-  border: 1px solid red;
-}
 .customTip {
   width: 30%;
   height: 50px;
@@ -163,8 +159,6 @@
   -moz-appearance: textfield;
 }
 /* ---------------------------------------------- RESULTS STYLES --------------------------- */
-@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
-
 .resultsContainer {
   display: flex;
   flex-wrap: wrap;
@@ -192,7 +186,7 @@
   min-inline-size: fit-content;
   font-family: monospace, monospace;
   color: var(--strongCyan-color);
-  font-size: 60px;
+  font-size: 40px;
   font-weight: 900;
 }
 
@@ -213,6 +207,59 @@
   cursor: pointer;
   border: 1px solid var(--lightGrayish2-color);
 }
-.prueba {
-  border: 5px solid blue;
+
+@media (max-width: 375px) {
+  .tipContainer {
+    flex-direction: column;
+    height: 90%;
+    width: 100%;
+    /* margin-bottom: 10%; */
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+  .inputsContainer {
+    width: 90%;
+  }
+  .billContainer span {
+    margin-top: 10%;
+    margin-bottom: 5%;
+  }
+  .btnsContainer span {
+    margin-bottom: 5%;
+  }
+  .billContainer input {
+    margin-top: -4%;
+    padding: 4%;
+    margin-bottom: 6%;
+  }
+
+  .divBtn1,
+  .divBtn2 {
+    display: contents;
+  }
+  .btnTip {
+    width: 48%;
+    margin-bottom: 5%;
+  }
+  .customTip {
+    width: 48%;
+  }
+
+  .peopleBtn {
+    padding: 4%;
+    margin-bottom: 6%;
+  }
+
+  .resultsContainer {
+    width: 90%;
+    margin-bottom: 10%;
+  }
+  .spanMoney {
+    font-size: 40px;
+  }
+
+  .btn {
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
 }

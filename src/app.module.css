@@ -12,8 +12,9 @@
   width: 100vw;
   height: 100vh;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
+  flex-direction: column;
 }
 
 .divsContainer {
@@ -24,4 +25,21 @@
   width: 65vw;
   height: 65vh;
   border-radius: 30px;
+}
+
+@media (max-width: 375px) {
+  .appContainer {
+    /* display: inline-flex; */
+    justify-content: flex-start;
+    height: 150%;
+    width: 100vw;
+  }
+  img {
+    margin-top: 50px;
+    margin-bottom: 150px;
+  }
+  .divsContainer {
+    height: 100%;
+    width: 100vw;
+  }
 }
