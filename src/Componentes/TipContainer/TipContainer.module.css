@@ -208,7 +208,7 @@
   border: 1px solid var(--lightGrayish2-color);
 }
 
-@media (max-width: 375px) {
+@media (max-width: 500px) {
   .tipContainer {
     flex-direction: column;
     height: 90%;

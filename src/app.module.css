@@ -27,7 +27,7 @@
   border-radius: 30px;
 }
 
-@media (max-width: 375px) {
+@media (max-width: 500px) {
   .appContainer {
     /* display: inline-flex; */
     justify-content: flex-start;
