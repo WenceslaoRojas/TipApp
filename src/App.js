@@ -4,8 +4,9 @@ import TipContainer from "./Componentes/TipContainer/TipContainer";
 
 function App() {
   return (
+    //
     <div className={appStyle.appContainer}>
-      <img src="./images/logo.svg" alt="" srcset="" />
+      <img src="./images/logo.svg" alt="" />
       <div className={appStyle.divsContainer}>
         <TipContainer />
       </div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { useEffect } from "react";
 import tipStayle from "./TipContainer.module.css";
 
@@ -6,7 +6,7 @@ function TipContainer() {
   // Declaro mis constantes de estado
   const [bill, setBill] = useState();
   const [tip, setTip] = useState(0);
-  const [person, setPerson] = useState(1);
+  const [person, setPerson] = useState();
   const [totalTip, setTotalTip] = useState("0.00");
   const [tipPerson, setTipPerson] = useState("0.00");
 
@@ -53,6 +53,7 @@ function TipContainer() {
       border: "none",
     },
   ];
+  // Funcion que evalua el btn activo
   const btnActive = (e) => {
     switch (e.target.value) {
       case "5":
@@ -98,8 +99,11 @@ function TipContainer() {
         setSelectBtn(actives);
     }
   };
-  // funcion que calcula el valor de la propina total y propina por persona
-  function totalTipCalculate(person1, tip1, bill1) {
+
+  const totalTipCalculate = useCallback(() => {
+    var tip1 = tip;
+    var person1 = person;
+    var bill1 = bill;
     if (!tip1 || !bill1 || !person1) {
       tip1 = tip;
       bill1 = bill;
@@ -112,26 +116,26 @@ function TipContainer() {
       return;
     }
     setTotalTip(result);
-    setTipPerson((result / person1).toFixed(2));
-  }
+    let resultPorPerson = (result / person1).toFixed(2);
+    if (!isFinite(resultPorPerson)) {
+      setTipPerson("0.00");
+      return;
+    }
+    setTipPerson(resultPorPerson);
+  }, [tip, bill, person]);
   // funcion que resetea los valores y los inputs
-  const reset = (e) => {
-    console.log(e);
-
+  const reset = () => {
     setSelectBtn(initialStateActives);
-    setPerson(1);
+    setPerson(0);
     setTipPerson("0.00");
-    setBill(0);
+    setBill();
     setTip(0);
     setTotalTip("0.00");
   };
   // actualizamos todos los estados con cualquier cambio de input
   useEffect(() => {
-    var tip1 = tip;
-    var person1 = person;
-    var bill1 = bill;
-    totalTipCalculate(person1, tip1, bill1);
-  }, [tip, bill, person]);
+    totalTipCalculate();
+  }, [totalTipCalculate]);
 
   const maxLengthCheck = (e) => {
     if (e.target.value.length > e.target.maxLength) {
@@ -147,7 +151,7 @@ function TipContainer() {
           <span> Bill </span>
           <input
             maxLength="7"
-            value={bill}
+            value={bill || ""}
             type="number"
             placeholder="0"
             min="0"
@@ -240,18 +244,13 @@ function TipContainer() {
         <div className={tipStayle.peopleContainer}>
           <span className={tipStayle.peopleSpan}>Number of People</span>
           <input
-            value={person}
+            value={person || ""}
             type="number"
             placeholder="0"
             style={selectBtn[6]}
             min="0"
             className={tipStayle.peopleBtn}
             onChange={(e) => {
-              if (e.target.value.length === 0) {
-                setPerson(1);
-                totalTipCalculate();
-                return;
-              }
               setPerson(e.target.value);
               totalTipCalculate();
             }}
@@ -269,7 +268,7 @@ function TipContainer() {
           <span className={tipStayle.spanTotal}>/Person</span>
           <span className={tipStayle.spanMoney}> ${tipPerson} </span>
         </div>
-        <button className={tipStayle.btn} onClick={(e) => reset(e)}>
+        <button className={tipStayle.btn} onClick={(e) => reset()}>
           RESET
         </button>
       </div>
